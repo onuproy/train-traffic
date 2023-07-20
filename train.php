@@ -35,3 +35,68 @@ void plotpixels(GLint h,GLint k, GLint x,GLint y)
 	draw_pixel(y+h,-x+k);
 	draw_pixel(-y+h,-x+k);
 }
+
+void draw_circle(GLint h, GLint k, GLint r)
+{
+	GLint d=1-r, x=0, y=r;
+	while(y>x)
+	{
+		plotpixels(h,k,x,y);
+		if(d<0) d+=2*x+3;
+		else
+		{
+			d+=2*(x-y)+5;
+			--y;
+		}
+		++x;
+	}
+	plotpixels(h,k,x,y);
+}
+
+void draw_object()
+{
+int l;
+if(day==1)
+{
+//sky
+glColor3f(0.0,0.9,0.9);
+glBegin(GL_POLYGON);
+glVertex2f(0,380);
+glVertex2f(0,700);
+glVertex2f(1100,700);
+glVertex2f(1100,380);
+glEnd();
+
+//sun
+
+
+	for(l=0;l<=35;l++)
+{
+		glColor3f(1.0,0.9,0.0);
+		draw_circle(100,625,l);
+}
+
+//plane
+if(plane==1)
+{
+	glColor3f(1.0,1.0,1.0);
+	glBegin(GL_POLYGON);
+	glVertex2f(925+n,625+o);
+glVertex2f(950+n,640+o);
+	glVertex2f(1015+n,640+o);
+	glVertex2f(1030+n,650+o);
+	glVertex2f(1050+n,650+o);
+	glVertex2f(1010+n,625+o);
+glEnd();
+
+	glColor3f(0.8,0.8,0.8);
+	glBegin(GL_LINE_LOOP);
+	glVertex2f(925+n,625+o);
+glVertex2f(950+n,640+o);
+	glVertex2f(1015+n,640+o);
+	glVertex2f(1030+n,650+o);
+	glVertex2f(1050+n,650+o);
+	glVertex2f(1010+n,625+o);
+glEnd();
+
+}
