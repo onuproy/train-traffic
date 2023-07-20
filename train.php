@@ -100,3 +100,57 @@ glVertex2f(950+n,640+o);
 glEnd();
 
 }
+
+//cloud1
+
+
+	for(l=0;l<=20;l++)
+	{
+		glColor3f(1.0,1.0,1.0);
+		draw_circle(160+m,625,l);
+
+	}
+
+
+	for(l=0;l<=35;l++)
+	{
+		glColor3f(1.0,1.0,1.0);
+		draw_circle(200+m,625,l);
+		draw_circle(225+m,625,l);
+	}
+
+	for(l=0;l<=20;l++)
+	{
+		glColor3f(1.0,1.0,1.0);
+		draw_circle(265+m,625,l);
+	}
+
+//cloud2
+
+
+	for(l=0;l<=20;l++)
+	{
+		glColor3f(1.0,1.0,1.0);
+		draw_circle(370+m,615,l);
+}
+
+
+
+
+	for(l=0;l<=35;l++)
+	{
+
+		glColor3f(1.0,1.0,1.0);
+		draw_circle(410+m,615,l);
+		draw_circle(435+m,615,l);
+		draw_circle(470+m,615,l);
+	}
+
+for(l=0;l<=20;l++)
+	{
+		glColor3f(1.0,1.0,1.0);
+		draw_circle(500+m,615,l);
+}
+
+
+
